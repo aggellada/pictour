@@ -3,11 +3,11 @@ import prisma from "@/lib/db";
 import { MoveLeft } from "lucide-react";
 import Link from "next/link";
 
-type Props = {
+export default async function Page({
+  params,
+}: {
   params: { locationSlug: string };
-};
-
-export default async function Page({ params }: Props) {
+}) {
   const { locationSlug } = params;
 
   const location = await prisma.marker.findUnique({
