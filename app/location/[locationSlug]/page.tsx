@@ -8,7 +8,7 @@ type Props = {
 };
 
 export default async function Page({ params }: Props) {
-  const { locationSlug } = await params;
+  const { locationSlug } = params;
 
   const location = await prisma.marker.findUnique({
     where: { slug: locationSlug },
